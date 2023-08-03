@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+      <!-- Avatar and Name Container -->
+    <div class="chatbot-info">
+        <img id="avatar" src="" alt="Chatbot Avatar" class="avatar">&nbsp;&nbsp;
+        <span id="chatbot-name" class="chatbot-name"></span>
+    </div>
+    <div class="chat-container">
+        <div class="chat-display" id="chat-display">
+            <div class="chat-message bot">Select a bot to chat with!</div>
+        </div>
+        <!-- <input type="text" id="user-input" placeholder="Type your message..."> -->
+        <div class="user-input-container">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-button" style="background-color: #f2f2f2; border: none; width: 600px; height: 30px;">Send</button> <!-- Add the "send" button -->
+        </div>
+    </div>
+    <div style="position: absolute; bottom: 13%; left: 35%;">
+        <label for="bot-name">Chat Partner</label>
+    <select id="bot-name">
+        <option value="Bill">Bill</option>
+        <option value="Sarah">Sarah</option>
+    </select>
+    <button id="save-bot-name-btn">Save</button>&nbsp;&nbsp;
+    <input type="text" id="user-name" placeholder="Your Name">
+        <button id="save-name-btn">Save</button>
+    </div>
+    <div id="image-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img id="modal-image" class="modal-content" alt="Full Image">
+    </div>
+
+    <div class="user-info">
+    </div>
+    
+    <div class="bot-info">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

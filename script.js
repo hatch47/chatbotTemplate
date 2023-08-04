@@ -35,10 +35,25 @@ saveBotNameBtn.addEventListener('click', () => {
     const selectedBotName = botNameSelect.value;
     if (selectedBotName) {
         botName = selectedBotName;
-        botInfo = selectedBotName === 'Bill' ? botBill : botSarah; // Update the botInfo object based on the selected bot's name
+        let selectedBot;
+        switch (selectedBotName) {
+            case 'Bill':
+                selectedBot = botBill;
+                break;
+            case 'Sarah':
+                selectedBot = botSarah;
+                break;
+            case 'Default':
+                selectedBot = botDefault;
+                break;
+            // Add more cases for other bots if needed
+            default:
+                selectedBot = botDefault;
+        }
+        botInfo = selectedBot;
         displayMessage(`You're chatting with ${botName}!`, 'bot');
-        currentChatbot = selectedBotName === 'Bill' ? botBill : botSarah; // Update the currentChatbot variable
-        updateChatbotInfo(currentChatbot); // Update the chatbot info in the UI
+        currentChatbot = selectedBot;
+        updateChatbotInfo(currentChatbot);
     }
 });
 

@@ -121,83 +121,125 @@ function processUserInput(input) {
     // Define regular expressions for trigger words
     const greetingsRegex = /\b(hello|hey|hi|yo|howdy|hiya|heya|heyy|heyo|yoo)\b/i;
     const swear = /\b(fuck|shit|cunt|bitch|ass|bastard)\b/i;
-    const posResponse = /\b(good|great|decent|alright|not bad|not so bad|same)\b/i;
-    const medResponse = /\b(okay|meh|blah)\b/i;
-    const negResponse = /\b(bad|not good|not great)\b/i;
     const whatsup = /\b(sup|whats up|hows it going|how's it going|hows it goin|how are you|how you doin|wassup)\b/i;
-    const gaming = /\b(gamin|gaming|video games|videogames|playing games)\b/i;
-    const name = /\b(whats my name|what's my name|do you know my name|who am i)\b/i;
     const bName = /\b(whats your name|what's your name|do you know your name|who are you|who is this|who's this|whos this|who dis)\b/i;
-    const eyeColorQuestion = /\b(eye color|eye colour|what colour are your eyes|what color are your eyes)\b/i;
-    const video = /\b(send a video)\b/i;
-    const picture = /\b(send a picture)\b/i;
-    const time = /\b(time|current time|what time is it)\b/i;
-    const joke = /\b(joke|tell me a joke|say something funny)\b/i;
-    const ageQuestion = /\b(age|how old are you|how many years old)\b/i;
-    const hairColorQuestion = /\b(hair color|what's your hair color|tell me your hair color|what color is your hair|hair colour|what's your hair colour|tell me your hair colour|what colour is your hair)\b/i;
-    const locationQuestion = /\b(where do you live|where are you from|where you from)\b/i;
-    const bioQuestion = /\b(bio|tell me about yourself|tell me about you)\b/i;
-    const picRandom = /\b(send a random picture)\b/i; // picture format in folders is 1 (1). to get this format, name all of the pictures 1
-    const vidRandom = /\b(send a random video)\b/i; // video format in folders is 2 (1). to get this format, name all of the videos 2
-    const hats = /\b(hats|hat|a hat)\b/i;
+    const hat = /\b(hats|hat|a hat)\b/i;
+    const shirt = /\b(shirts|shirt|a shirt)\b/i;
+    const pants = /\b(pants|pant|a pant)\b/i;
+    const shoes = /\b(shoes|shoe|a shoe)\b/i;
+    const dress = /\b(dresses|dress|a dress)\b/i;
+    const jacket = /\b(jackets|jacket|a jacket)\b/i;
+    const skirt = /\b(skirts|skirt|a skirt)\b/i;
+    const socks = /\b(socks|sock|a sock)\b/i;
+    const shorts = /\b(shorts|short|a short)\b/i;
+    const sweater = /\b(sweaters|sweater|a sweater|hoodie)\b/i;
+
+    // removed prompts, these were used for general conversation - not needed for helpbot
+    // const posResponse = /\b(good|great|decent|alright|not bad|not so bad|same)\b/i;
+    // const medResponse = /\b(okay|meh|blah)\b/i;
+    // const negResponse = /\b(bad|not good|not great)\b/i;
+    // const gaming = /\b(gamin|gaming|video games|videogames|playing games)\b/i;
+    // const name = /\b(whats my name|what's my name|do you know my name|who am i)\b/i;
+    // const eyeColorQuestion = /\b(eye color|eye colour|what colour are your eyes|what color are your eyes)\b/i;
+    // const video = /\b(send a video)\b/i;
+    // const picture = /\b(send a picture)\b/i;
+    // const joke = /\b(joke|tell me a joke|say something funny)\b/i;
+    // const ageQuestion = /\b(age|how old are you|how many years old)\b/i;
+    // const hairColorQuestion = /\b(hair color|what's your hair color|tell me your hair color|what color is your hair|hair colour|what's your hair colour|tell me your hair colour|what colour is your hair)\b/i;
+    // const locationQuestion = /\b(where do you live|where are you from|where you from)\b/i;
+    // const bioQuestion = /\b(bio|tell me about yourself|tell me about you)\b/i;
+    // const picRandom = /\b(send a random picture)\b/i; // picture format in folders is 1 (1). to get this format, name all of the pictures 1
+    // const vidRandom = /\b(send a random video)\b/i; // video format in folders is 2 (1). to get this format, name all of the videos 2
+    // const time = /\b(time|current time|what time is it)\b/i;
 
    // Simulate bot's response 
 let responseMessage;
 let responseImage;
 if (greetingsRegex.test(input)) {
-    // responseMessage = "Hello there!";
-    responseMessage = `Hey ${userName || 'there'}!`;
-} else if (video.test(input)) {
-    responseMessage = "Here's a random video";
-    responseImage = `photo/${botName}/2 (1).mp4`;
-} else if (picture.test(input)) {
-    responseMessage = "Here's a pic of me";
-    responseImage = `photo/${botName}/avatar.png`;
+    responseMessage = "Hello there, How can I help you today?";
+    // responseMessage = `Hey ${userName || 'there, how can I help you today?'}`;
 } else if (swear.test(input)) {
-    responseMessage = "Don't swear at me!";
+    responseMessage = "Please don't swear at me! Is there something you're looking for?";
 } else if (whatsup.test(input)) {
-    responseMessage = Math.random() < 0.5 ? "Chillin, you?" : "Not much! you?";
-} else if (posResponse.test(input)) {
-    responseMessage = "That's good!";
-} else if (medResponse.test(input)) {
-    responseMessage = "Just okay?";
-} else if (negResponse.test(input)) {
-    responseMessage = "That's a bummer";
-} else if (gaming.test(input)) {
-    responseMessage = "What game?";
-} else if (name.test(input)) {
-    responseMessage = `${userName}!`;
+    responseMessage = Math.random() < 0.5 ? "Just here to help you! Is there something you're looking for?" : "Ready to help, is there something I can help you find today?";
 } else if (bName.test(input)) {
-    responseMessage = `${botName || 'the bot'}!`;
-} else if (input.toLowerCase().includes('pizza')) {
-    responseMessage = "Pizza is the best.";
-} else if (eyeColorQuestion.test(input)) {
-    responseMessage = `My eyes are ${botInfo.eyeColor}.`;
-} else if (ageQuestion.test(input)) {
-    responseMessage = `I'm ${botInfo.age}!`;
-} else if (hairColorQuestion.test(input)) {
-    responseMessage = `My hair is ${botInfo.hairColor}!`;
-} else if (locationQuestion.test(input)) {
-    responseMessage = `I'm from ${botInfo.location}!`;
-} else if (bioQuestion.test(input)) {
-    responseMessage = `${botInfo.bio}`;
-} else if (time.test(input)) {
-    responseMessage = `The current time is ${currentTime}.`;
-} else if (joke.test(input)) {
-    responseMessage = "Did you hear about the mathematician who's afraid of negative numbers? He'll stop at nothing to avoid them!";
-} else if (picRandom.test(input)) {
-    const randomNum = Math.floor(Math.random() * 2) + 1; // Generate a random number between 1 and 2
-    responseImage = `photo/${botName}/1 (${randomNum}).png`;
-} else if (vidRandom.test(input)) {
-    const randomNum = Math.floor(Math.random() * 2) + 1; // Generate a random number between 1 and 2
-    responseImage = `photo/${botName}/2 (${randomNum}).mp4`;
-} else if (hats.test(input)) {
+    responseMessage = `${botName || 'My name is Help Bot'}!`;
+} else if (hat.test(input)) {
     responseMessage = `If you're searching for hats,&nbsp; <a href="C:/xampp/htdocs/cb/redirect.html">Click Here!</a>`;
+} else if (shirt.test(input)) {
+    responseMessage = "If you're searching for shirts,&nbsp; <a href='C:/xampp/htdocs/cb/redirect.html'>Click Here!</a>";
+} else if (pants.test(input)) {
+    responseMessage = "If you're searching for pants,&nbsp; <a href='C:/xampp/htdocs/cb/redirect.html'>Click Here!</a>";
+} else if (shoes.test(input)) {
+    responseMessage = "If you're searching for shirts,&nbsp; <a href='C:/xampp/htdocs/cb/redirect.html'>Click Here!</a>";
+} else if (dress.test(input)) {
+    responseMessage = "If you're searching for pants,&nbsp; <a href='C:/xampp/htdocs/cb/redirect.html'>Click Here!</a>";
+} else if (jacket.test(input)) {
+    responseMessage = "If you're searching for shirts,&nbsp; <a href='C:/xampp/htdocs/cb/redirect.html'>Click Here!</a>";
+} else if (pants.test(input)) {
+    responseMessage = "If you're searching for pants,&nbsp; <a href='C:/xampp/htdocs/cb/redirect.html'>Click Here!</a>";
+} else if (skirt.test(input)) {
+    responseMessage = "If you're searching for shirts,&nbsp; <a href='C:/xampp/htdocs/cb/redirect.html'>Click Here!</a>";
+} else if (socks.test(input)) {
+    responseMessage = "If you're searching for pants,&nbsp; <a href='C:/xampp/htdocs/cb/redirect.html'>Click Here!</a>";
+} else if (shorts.test(input)) {
+    responseMessage = "If you're searching for shirts,&nbsp; <a href='C:/xampp/htdocs/cb/redirect.html'>Click Here!</a>";
+} else if (sweater.test(input)) {
+    responseMessage = "If you're searching for pants,&nbsp; <a href='C:/xampp/htdocs/cb/redirect.html'>Click Here!</a>";
 }
+
 
   else {
     responseMessage = "I'm sorry, I didn't understand. Is there something you're looking for?";
 }
+
+
+// removed responses, these were used for general conversation - not needed for helpbot
+//  else if (video.test(input)) {
+//     responseMessage = "Here's a random video";
+//     responseImage = `photo/${botName}/2 (1).mp4`;
+// } else if (picture.test(input)) {
+//     responseMessage = "Here's a pic of me";
+//     responseImage = `photo/${botName}/avatar.png`;
+// } 
+// else if (posResponse.test(input)) {
+//     responseMessage = "That's good!";
+// } else if (medResponse.test(input)) {
+//     responseMessage = "Just okay?";
+// } else if (negResponse.test(input)) {
+//     responseMessage = "That's a bummer";
+// } else if (gaming.test(input)) {
+//     responseMessage = "What game?";
+// } else if (name.test(input)) {
+//     responseMessage = `${userName}!`;
+// } 
+// else if (input.toLowerCase().includes('pizza')) {
+//     responseMessage = "Pizza is the best.";
+// } else if (eyeColorQuestion.test(input)) {
+//     responseMessage = `My eyes are ${botInfo.eyeColor}.`;
+// } else if (ageQuestion.test(input)) {
+//     responseMessage = `I'm ${botInfo.age}!`;
+// } else if (hairColorQuestion.test(input)) {
+//     responseMessage = `My hair is ${botInfo.hairColor}!`;
+// } else if (locationQuestion.test(input)) {
+//     responseMessage = `I'm from ${botInfo.location}!`;
+// } else if (bioQuestion.test(input)) {
+//     responseMessage = `${botInfo.bio}`;
+// } 
+// else if (joke.test(input)) {
+//     responseMessage = "Did you hear about the mathematician who's afraid of negative numbers? He'll stop at nothing to avoid them!";
+// } 
+// else if (picRandom.test(input)) {
+//     const randomNum = Math.floor(Math.random() * 2) + 1; // Generate a random number between 1 and 2
+//     responseImage = `photo/${botName}/1 (${randomNum}).png`;
+// } else if (vidRandom.test(input)) {
+//     const randomNum = Math.floor(Math.random() * 2) + 1; // Generate a random number between 1 and 2
+//     responseImage = `photo/${botName}/2 (${randomNum}).mp4`;
+// } 
+// else if (time.test(input)) {
+//     responseMessage = `The current time is ${currentTime}.`;
+// } 
+
 
     
     setTimeout(() => {

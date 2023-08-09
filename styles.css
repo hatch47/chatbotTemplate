@@ -16,7 +16,7 @@ body {
     position: fixed;
     bottom: 0;
     right: 0;
-    max-width: 600px; 
+    max-width: 500px; 
     margin: 0px auto;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -31,7 +31,7 @@ body {
     max-height: 400px;
     overflow-y: scroll;
     height: 400px; 
-    width: 580px;
+    width: 500px;
 }
 
 #chat-display {

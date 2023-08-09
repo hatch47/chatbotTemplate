@@ -6,30 +6,33 @@
 </head>
 <body>
 
-      <!-- Avatar and Name Container -->
-    <div class="chatbot-info">
-        <img id="avatar" src="" alt="Chatbot Avatar" class="avatar">&nbsp;&nbsp;
-        <span id="chatbot-name" class="chatbot-name"></span>
-    </div>
     <div class="chat-container">
-        <div class="chat-display" id="chat-display">
-            <div class="chat-message bot">Select a bot to chat with!</div>
+        <!-- Chat content here -->
+        <button id="toggle-button" class="minimize-button">&#10134;</button>
+        <!-- Avatar and Name Container -->
+        <div class="chatbot-info">
+            <img id="avatar" src="" alt="Chatbot Avatar" class="avatar">&nbsp;&nbsp;
+            <span id="chatbot-name" class="chatbot-name"></span>
         </div>
+        <div class="chat-display chat-display-visible" id="chat-display">
+            <div class="chat-message bot initial-message">I'm your help bot, here to help with anything!</div>
+        </div>        
         <!-- <input type="text" id="user-input" placeholder="Type your message..."> -->
-        <div class="user-input-container">
+        <div class="user-input-container user-input-visible">
             <input type="text" id="user-input" placeholder="Type your message...">
-            <button id="send-button" style="background-color: #f2f2f2; border: none; width: 600px; height: 30px;">Send</button> <!-- Add the "send" button -->
+            <button id="send-button" style="background-color: #f2f2f2; border: none; width: 600px; height: 30px;">Send</button>
         </div>
     </div>
+    
     <div style="position: absolute; top: 3%; left: 35%;">
-        <label for="bot-name">Chat Bot</label>
-    <select id="bot-name">
+        <!-- <label for="bot-name">Chat Bot</label> -->
+    <!-- <select id="bot-name">
         <option value="Default">Default</option>
         <option value="Bill">Bill</option>
         <option value="Sarah">Sarah</option>
-    </select>
+    </select> -->
     <button id="save-bot-name-btn">Save</button>&nbsp;&nbsp;
-    <input type="text" id="user-name" placeholder="Your Name">
+    <!-- <input type="text" id="user-name" placeholder="Your Name"> -->
         <button id="save-name-btn">Save</button>
     </div>
     <div id="image-modal" class="modal">

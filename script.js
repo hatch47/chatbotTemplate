@@ -51,7 +51,7 @@ saveBotNameBtn.addEventListener('click', () => {
                 selectedBot = botDefault;
         }
         botInfo = selectedBot;
-        displayMessage(`You're chatting with ${botName}!`, 'bot');
+        displayMessage(`You're chatting with ${botName}! What can I help you with today?`, 'bot');
         currentChatbot = selectedBot;
         updateChatbotInfo(currentChatbot);
     }
@@ -64,10 +64,10 @@ function displayMessage(message, sender) {
 
     if (typeof message === 'string') {
         // If the message is a string, create a text node
-        chatMessage.textContent = message;
+        chatMessage.innerHTML = message; // Use innerHTML instead of textContent
     } else if (typeof message === 'object' && message.text) {
         // If the message is an object with a 'text' property, display the text message
-        chatMessage.textContent = message.text;
+        chatMessage.innerHTML = message.text; // Use innerHTML instead of textContent
     }
 
     chatDisplay.appendChild(chatMessage);
@@ -139,6 +139,7 @@ function processUserInput(input) {
     const bioQuestion = /\b(bio|tell me about yourself|tell me about you)\b/i;
     const picRandom = /\b(send a random picture)\b/i; // picture format in folders is 1 (1). to get this format, name all of the pictures 1
     const vidRandom = /\b(send a random video)\b/i; // video format in folders is 2 (1). to get this format, name all of the videos 2
+    const hats = /\b(hats|hat|a hat)\b/i;
 
    // Simulate bot's response 
 let responseMessage;
@@ -155,7 +156,7 @@ if (greetingsRegex.test(input)) {
 } else if (swear.test(input)) {
     responseMessage = "Don't swear at me!";
 } else if (whatsup.test(input)) {
-    responseMessage = "Chillin, you?";
+    responseMessage = Math.random() < 0.5 ? "Chillin, you?" : "Not much! you?";
 } else if (posResponse.test(input)) {
     responseMessage = "That's good!";
 } else if (medResponse.test(input)) {
@@ -190,10 +191,12 @@ if (greetingsRegex.test(input)) {
 } else if (vidRandom.test(input)) {
     const randomNum = Math.floor(Math.random() * 2) + 1; // Generate a random number between 1 and 2
     responseImage = `photo/${botName}/2 (${randomNum}).mp4`;
-} 
+} else if (hats.test(input)) {
+    responseMessage = `If you're searching for hats,&nbsp; <a href="C:/xampp/htdocs/cb/redirect.html">Click Here!</a>`;
+}
 
   else {
-    responseMessage = "Lol";
+    responseMessage = "I'm sorry, I didn't understand. Is there something you're looking for?";
 }
 
     
@@ -220,12 +223,12 @@ userInput.addEventListener('keyup', (event) => {
 
 // Object for Bot Default
 const botDefault = {
-    name: 'Default Bot',
+    name: 'Help Bot',
     age: 10000,
     hairColor: 'none',
     eyeColor: 'none',
     location: 'none',
-    bio: 'Hello! I am the default bot, a friendly AI ready to chat with you!',
+    bio: 'Hello! I am the help bot, a friendly AI ready to chat with you!',
     avatar: 'photo/Bill/avatar.png',
 };
 
@@ -263,3 +266,31 @@ function updateChatbotInfo(bot) {
 // Set default chatbot (you can change this based on user selection)
 let currentChatbot = botDefault;
 updateChatbotInfo(currentChatbot);
+
+
+// const chatContainer = document.querySelector('.chat-container');
+// const toggleButton = document.getElementById('toggle-button');
+
+// toggleButton.addEventListener('click', () => {
+//     chatContainer.classList.toggle('minimized');
+//     toggleButton.innerHTML = chatContainer.classList.contains('minimized') ? '&#10133;' : '&#10134;';
+// });
+
+
+const chatContainer = document.querySelector('.chat-container');
+const toggleButton = document.getElementById('toggle-button');
+const chatInfo = document.querySelector('.chatbot-info');
+const chatDisplay2 = document.querySelector('.chat-display');
+const userInputContainer = document.querySelector('.user-input-container');
+const initialMessage = document.querySelector('.initial-message'); // Add this line
+
+toggleButton.addEventListener('click', () => {
+    chatContainer.classList.toggle('minimized');
+    chatInfo.classList.toggle('chat-info-visible', !chatContainer.classList.contains('minimized'));
+    chatDisplay2.classList.toggle('chat-display-visible', !chatContainer.classList.contains('minimized'));
+    userInputContainer.classList.toggle('user-input-visible', !chatContainer.classList.contains('minimized'));
+    initialMessage.classList.toggle('chat-display-visible', !chatContainer.classList.contains('minimized')); // Add this line
+    toggleButton.innerHTML = chatContainer.classList.contains('minimized') ? '&#10133;' : '&#10134;';
+});
+
+

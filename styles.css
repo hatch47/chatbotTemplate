@@ -4,13 +4,27 @@ body {
     padding: 0;
 }
 
-.chat-container {
-    max-width: 600px; /* Change the max-width to your desired value */
+/* .chat-container {
+    max-width: 600px; 
     margin: 0px auto;
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
+} */
+
+.chat-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    max-width: 600px; 
+    margin: 0px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .chat-display {
     padding: 10px;
@@ -133,7 +147,7 @@ body {
     background-color: #f2f2f2;
     max-width: 580px; /* Change the max-width to your desired value */
     margin: -1px auto 0;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
@@ -149,4 +163,52 @@ body {
     font-size: 20px;
     font-weight: bold;
 }
+
+/* Position the button to the right side */
+.minimize-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    color: black;
+    border: none;
+    padding: 1px 8px;
+    cursor: pointer;
+    border-radius: 0 5px 0 0;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+/* Style for the button when minimized */
+.minimized .minimize-button {
+    background-color: transparent;
+}
+
+.chat-container.minimized {
+    height: 25px; /* Adjust the width as needed */
+    width: 30px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Hide chatbot-info when chat is minimized */
+.chat-container.minimized .chatbot-info {
+    display: none;
+}
+
+/* Hide chat-display when chat is minimized */
+.chat-container.minimized .chat-display-visible {
+    display: none;
+}
+
+/* Hide user-input-container when chat is minimized */
+.chat-container.minimized .user-input-visible {
+    display: none;
+}
+
+/* Hide initial chat message when chat is minimized */
+.chat-container.minimized .initial-message {
+    display: none;
+}
+
+
 

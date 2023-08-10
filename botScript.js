@@ -272,7 +272,7 @@ const botDefault = {
     eyeColor: 'none',
     location: 'none',
     bio: 'Hello! I am the help bot, a friendly AI ready to chat with you!',
-    avatar: 'photo/Bill/avatar.png',
+    avatar: 'botphoto/Bill/avatar.png',
 };
 
 // Object for Bot Bill
@@ -283,7 +283,7 @@ const botBill = {
     eyeColor: 'blue',
     location: 'New York',
     bio: 'I am Bot Bill, a friendly AI ready to chat with you!',
-    avatar: 'photo/Bill/avatar.png',
+    avatar: 'botphoto/Bill/avatar.png',
 };
 
 // Object for Bot Sarah
@@ -294,7 +294,7 @@ const botSarah = {
     eyeColor: 'blue',
     location: 'Los Angeles',
     bio: 'Hello! I am Sarah, a friendly AI ready to chat with you!',
-    avatar: 'photo/Sarah/avatar.png',
+    avatar: 'botphoto/Sarah/avatar.png',
 };
 
 // Function to update chatbot info

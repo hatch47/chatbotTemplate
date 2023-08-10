@@ -166,27 +166,27 @@ if (greetingsRegex.test(input)) {
 } else if (bName.test(input)) {
     responseMessage = `${botName || 'My name is Help Bot'}!`;
 } else if (hat.test(input)) {
-    responseMessage = `If you're searching for hats,&nbsp; <a href="C:/xampp/htdocs/cb/botredirect.html">Click Here!</a>`;
+    responseMessage = `If you're searching for hats,&nbsp; <a href="C:/xampp/htdocs/cb/bot/botredirect.html">Click Here!</a>`;
 } else if (shirt.test(input)) {
-    responseMessage = "If you're searching for shirts,&nbsp; <a href='C:/xampp/htdocs/cb/botredirect.html'>Click Here!</a>";
+    responseMessage = "If you're searching for shirts,&nbsp; <a href='C:/xampp/htdocs/cb/bot/botredirect.html'>Click Here!</a>";
 } else if (pants.test(input)) {
-    responseMessage = "If you're searching for pants,&nbsp; <a href='C:/xampp/htdocs/cb/botredirect.html'>Click Here!</a>";
+    responseMessage = "If you're searching for pants,&nbsp; <a href='C:/xampp/htdocs/cb/bot/botredirect.html'>Click Here!</a>";
 } else if (shoes.test(input)) {
-    responseMessage = "If you're searching for shoes,&nbsp; <a href='C:/xampp/htdocs/cb/botredirect.html'>Click Here!</a>";
+    responseMessage = "If you're searching for shoes,&nbsp; <a href='C:/xampp/htdocs/cb/bot/botredirect.html'>Click Here!</a>";
 } else if (dress.test(input)) {
-    responseMessage = "If you're searching for dresses,&nbsp; <a href='C:/xampp/htdocs/cb/botredirect.html'>Click Here!</a>";
+    responseMessage = "If you're searching for dresses,&nbsp; <a href='C:/xampp/htdocs/cb/bot/botredirect.html'>Click Here!</a>";
 } else if (jacket.test(input)) {
-    responseMessage = "If you're searching for jackets,&nbsp; <a href='C:/xampp/htdocs/cb/botredirect.html'>Click Here!</a>";
+    responseMessage = "If you're searching for jackets,&nbsp; <a href='C:/xampp/htdocs/cb/bot/botredirect.html'>Click Here!</a>";
 } else if (toque.test(input)) {
-    responseMessage = "If you're searching for toques,&nbsp; <a href='C:/xampp/htdocs/cb/botredirect.html'>Click Here!</a>";
+    responseMessage = "If you're searching for toques,&nbsp; <a href='C:/xampp/htdocs/cb/bot/botredirect.html'>Click Here!</a>";
 } else if (skirt.test(input)) {
-    responseMessage = "If you're searching for skirts,&nbsp; <a href='C:/xampp/htdocs/cb/botredirect.html'>Click Here!</a>";
+    responseMessage = "If you're searching for skirts,&nbsp; <a href='C:/xampp/htdocs/cb/bot/botredirect.html'>Click Here!</a>";
 } else if (socks.test(input)) {
-    responseMessage = "If you're searching for socks,&nbsp; <a href='C:/xampp/htdocs/cb/botredirect.html'>Click Here!</a>";
+    responseMessage = "If you're searching for socks,&nbsp; <a href='C:/xampp/htdocs/cb/bot/botredirect.html'>Click Here!</a>";
 } else if (shorts.test(input)) {
-    responseMessage = "If you're searching for shorts,&nbsp; <a href='C:/xampp/htdocs/cb/botredirect.html'>Click Here!</a>";
+    responseMessage = "If you're searching for shorts,&nbsp; <a href='C:/xampp/htdocs/cb/bot/botredirect.html'>Click Here!</a>";
 } else if (sweater.test(input)) {
-    responseMessage = "If you're searching for sweaters,&nbsp; <a href='C:/xampp/htdocs/cb/botredirect.html'>Click Here!</a>";
+    responseMessage = "If you're searching for sweaters,&nbsp; <a href='C:/xampp/htdocs/cb/bot/botredirect.html'>Click Here!</a>";
 }
 
 

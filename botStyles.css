@@ -185,7 +185,7 @@ body {
 }
 
 .chat-container.minimized {
-    height: 25px; /* Adjust the width as needed */
+    height: 22px; /* Adjust the width as needed */
     width: 30px;
     transition: width 0.3s ease-in-out;
 }

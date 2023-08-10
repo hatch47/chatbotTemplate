@@ -37,12 +37,12 @@ saveBotNameBtn.addEventListener('click', () => {
         botName = selectedBotName;
         let selectedBot;
         switch (selectedBotName) {
-            case 'Bill':
-                selectedBot = botBill;
-                break;
-            case 'Sarah':
-                selectedBot = botSarah;
-                break;
+            // case 'Bill':
+            //     selectedBot = botBill;
+            //     break;
+            // case 'Sarah':
+            //     selectedBot = botSarah;
+            //     break;
             case 'Default':
                 selectedBot = botDefault;
                 break;
@@ -191,7 +191,7 @@ if (greetingsRegex.test(input)) {
 
 
   else {
-    responseMessage = "I'm sorry, I didn't understand. Is there something you're looking for?";
+    responseMessage = "I'm sorry, I didn't understand. How can I help you today?";
 }
 
 
@@ -276,26 +276,26 @@ const botDefault = {
 };
 
 // Object for Bot Bill
-const botBill = {
-    name: 'Bill',
-    age: 30,
-    hairColor: 'brown',
-    eyeColor: 'blue',
-    location: 'New York',
-    bio: 'I am Bot Bill, a friendly AI ready to chat with you!',
-    avatar: 'botphoto/Bill/avatar.png',
-};
+// const botBill = {
+//     name: 'Bill',
+//     age: 30,
+//     hairColor: 'brown',
+//     eyeColor: 'blue',
+//     location: 'New York',
+//     bio: 'I am Bot Bill, a friendly AI ready to chat with you!',
+//     avatar: 'botphoto/Bill/avatar.png',
+// };
 
-// Object for Bot Sarah
-const botSarah = {
-    name: 'Sarah',
-    age: 25,
-    hairColor: 'blonde',
-    eyeColor: 'blue',
-    location: 'Los Angeles',
-    bio: 'Hello! I am Sarah, a friendly AI ready to chat with you!',
-    avatar: 'botphoto/Sarah/avatar.png',
-};
+// // Object for Bot Sarah
+// const botSarah = {
+//     name: 'Sarah',
+//     age: 25,
+//     hairColor: 'blonde',
+//     eyeColor: 'blue',
+//     location: 'Los Angeles',
+//     bio: 'Hello! I am Sarah, a friendly AI ready to chat with you!',
+//     avatar: 'botphoto/Sarah/avatar.png',
+// };
 
 // Function to update chatbot info
 function updateChatbotInfo(bot) {

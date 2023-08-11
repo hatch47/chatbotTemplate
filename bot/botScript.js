@@ -333,6 +333,7 @@ toggleButton.addEventListener('click', () => {
     chatDisplay2.classList.toggle('chat-display-visible', !chatContainer.classList.contains('minimized'));
     userInputContainer.classList.toggle('user-input-visible', !chatContainer.classList.contains('minimized'));
     initialMessage.classList.toggle('chat-display-visible', !chatContainer.classList.contains('minimized')); // Add this line
+    toggleButton.style.backgroundColor = chatContainer.classList.contains('minimized') ? '#f2f2f2' : '#f2f2f2';
     toggleButton.innerHTML = chatContainer.classList.contains('minimized') ? '&#10133;' : '&#10134;';
 });
 

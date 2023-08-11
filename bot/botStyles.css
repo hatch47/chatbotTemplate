@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    margin: 0; /* when adding bot to new project, comment out margin and padding here as it will mess with styling */
+    padding: 0; 
 }
 
 /* .chat-container {
@@ -32,6 +32,7 @@ body {
     overflow-y: scroll;
     height: 400px; 
     width: 500px;
+    background-color: white;
 }
 
 #chat-display {
